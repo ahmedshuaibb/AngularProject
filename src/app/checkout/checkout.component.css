@@ -1,0 +1,14 @@
+.cart-btn {
+    display: inline-block;
+    background-color: #f30303;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 12px 30px;
+    transition: all .5s;
+  }
+  .cart-btn:hover {
+    background-color: #afafaf;
+    color:black;
+  }

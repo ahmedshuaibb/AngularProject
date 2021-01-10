@@ -1,0 +1,35 @@
+
+
+
+<main class="container">
+ 
+    <!-- Left Column / Headphones Image -->
+    <div class="left-column" >
+
+      <img  class="active" [src]="data['image']" width="300" height="400" alt="">
+    </div>
+   
+   
+    <!-- Right Column -->
+    <div class="right-column">
+   
+      <!-- Product Description -->
+      <div class="product-description">
+        <span>{{data['category']}}</span>
+        <h1>{{data['title']}}</h1>
+        <p>{{data['description']}}</p>
+      </div>
+   
+      <hr>
+   
+      <!-- Product Pricing -->
+      <div class="product-price">
+        <span>{{data['price'] }} EG</span>
+        <a href="#" class="cart-btn">Add to cart</a>
+      </div>
+    </div>
+    
+
+  </main>
+
+  <br><br><br> <br><br><br><br><br>

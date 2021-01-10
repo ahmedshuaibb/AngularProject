@@ -1,0 +1,65 @@
+<form [formGroup]="confirmOrder" (ngSubmit)="handleRegister()">
+  <!-- Name -->
+  <div class="form-group">
+    <label for="exampleInputEmail1">Name</label>
+    <input
+      type="text"
+      formControlName="name"
+      class="form-control col-8"
+      id="exampleInputEmail1"
+      aria-describedby="emailHelp"
+      placeholder="Name"
+    />
+
+    <!-- Name Validation -->
+    <div
+      class="alert alert-danger col-8"
+      *ngIf="
+        registerFormControl.name.touched && !registerFormControl.name.valid
+      "
+    >
+      <div *ngIf="registerFormControl.name.errors.required" class="text-danger">
+        Name Required
+      </div>
+      <div
+        *ngIf="registerFormControl.name.errors.minlength"
+        class="text-danger"
+      >
+        Min char is 3
+      </div>
+    </div>
+  </div>
+
+  <!-- Email -->
+  <div class="form-group pb-3">
+    <label for="exampleInputPassword1">Email</label>
+    <input
+      type="email"
+      formControlName="email"
+      class="form-control col-8"
+      id="exampleInputEmail1"
+      placeholder="Email"
+    />
+
+    <!-- Email Validation -->
+    <div
+      class="alert alert-danger col-8"
+      *ngIf="
+        registerFormControl.email.touched && !registerFormControl.email.valid
+      "
+    >
+      <div
+        *ngIf="registerFormControl.email.errors.required"
+        class="text-danger"
+      >
+        Email Required
+      </div>
+      <div *ngIf="registerFormControl.email.errors.pattern" class="text-danger">
+        Input Email in this formt x@x.xx
+      </div>
+    </div>
+  </div>
+  <button class="cart-btn" [disabled]="!confirmOrder.valid" (click)="goToPage('product')">
+    Checkout
+  </button>
+</form>
